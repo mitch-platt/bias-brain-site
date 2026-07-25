@@ -211,6 +211,10 @@ a:hover { text-decoration: underline; }
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
+.two-col p {
+  color: var(--ink);
+  font-size: 1.35rem;
+}
 .two-col p + p { margin-top: 1.2rem; }
 .two-col .btn { margin-top: 1.8rem; }
 .dropcap::first-letter {
@@ -282,8 +286,11 @@ a:hover { text-decoration: underline; }
 }
 
 /* ---------- Bio ---------- */
-.bio p { margin-bottom: 1.4rem; color: var(--ink-dim); }
-.bio p:first-child { color: var(--ink); font-size: 1.35rem; }
+.bio p {
+  margin-bottom: 1.4rem;
+  color: var(--ink);
+  font-size: 1.35rem;
+}
 .bio-signoff {
   font-family: var(--serif);
   font-size: 1.5rem;
