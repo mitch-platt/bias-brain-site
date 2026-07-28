@@ -4,14 +4,14 @@
    ============================================================ */
 
 :root {
-  --bg:        #0d100c;
-  --bg-alt:    #141a12;
-  --panel:     #1a2117;
+  --bg:        #000000;
+  --bg-alt:    #0c0c0a;
+  --panel:     #141410;
   --ink:       #f3ecdb;
   --ink-dim:   #bdb5a1;
   --gold:      #f0c14b;
-  --green:     #6cc174;
-  --sky:       #62c8de;
+  --gold-deep: #c9982e;
+  --gold-soft: #a8853a;
   --line:      rgba(240, 193, 75, 0.28);
   --serif:     "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --body:      "EB Garamond", Georgia, "Times New Roman", serif;
@@ -32,7 +32,7 @@ body {
 
 img { display: block; max-width: 100%; height: auto; }
 
-a { color: var(--sky); text-decoration: none; }
+a { color: var(--gold); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ---------- Buttons ---------- */
@@ -116,8 +116,8 @@ a:hover { text-decoration: underline; }
   justify-content: center;
   padding: 4rem 4vw 5rem;
   background:
-    radial-gradient(ellipse 70% 55% at 18% 40%, rgba(108,193,116,0.12), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 70%, rgba(98,200,222,0.10), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 18% 40%, rgba(240,193,75,0.10), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 70%, rgba(201,152,46,0.08), transparent 60%),
     var(--bg);
 }
 .hero-inner {
@@ -147,7 +147,7 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--gold-soft);
   margin-bottom: 1.2rem;
 }
 .hero h1 {
@@ -155,18 +155,16 @@ a:hover { text-decoration: underline; }
   font-weight: 700;
   font-size: clamp(2.6rem, 5.5vw, 4.4rem);
   line-height: 1.05;
-  color: var(--ink);
+  color: var(--gold);
   margin-bottom: 1.4rem;
 }
-.hero h1 span { color: var(--gold); }
 .lede {
   font-size: 1.3rem;
   color: var(--ink-dim);
   max-width: 34em;
   margin-bottom: 2.2rem;
 }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-bottom: 1.6rem; }
-.hero-note { font-size: 1rem; color: var(--ink-dim); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 .scroll-hint {
   position: absolute;
   bottom: 1.4rem;
@@ -205,18 +203,8 @@ a:hover { text-decoration: underline; }
   max-width: 46em;
   margin: 0 auto 3rem;
 }
-.two-col {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: start;
-}
-.two-col p {
-  color: var(--ink);
-  font-size: 1.35rem;
-}
-.two-col p + p { margin-top: 1.2rem; }
-.two-col .btn { margin-top: 1.8rem; }
+.book-text { max-width: 720px; margin: 0 auto; }
+.book-text p + p { margin-top: 1.2rem; }
 .dropcap::first-letter {
   font-family: var(--serif);
   font-weight: 700;
@@ -226,15 +214,6 @@ a:hover { text-decoration: underline; }
   padding: 0.08em 0.12em 0 0;
   color: var(--gold);
 }
-.feature-list { list-style: none; }
-.feature-list li {
-  padding: 1rem 0 1rem 1.6rem;
-  border-left: 2px solid var(--line);
-  margin-bottom: 0.6rem;
-  color: var(--ink-dim);
-}
-.feature-list strong { color: var(--ink); }
-
 /* ---------- Gallery ---------- */
 .gallery {
   display: grid;
@@ -274,7 +253,7 @@ a:hover { text-decoration: underline; }
   text-align: center;
 }
 .volume2-inner { max-width: 760px; }
-.volume2 .kicker { color: var(--sky); }
+.volume2 .kicker { color: var(--gold-soft); }
 .volume2-date {
   font-family: var(--serif);
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
@@ -286,11 +265,8 @@ a:hover { text-decoration: underline; }
 }
 
 /* ---------- Bio ---------- */
-.bio p {
-  margin-bottom: 1.4rem;
-  color: var(--ink);
-  font-size: 1.35rem;
-}
+.bio p { margin-bottom: 1.4rem; color: var(--ink-dim); }
+.bio p:first-child { color: var(--ink); font-size: 1.35rem; }
 .bio-signoff {
   font-family: var(--serif);
   font-size: 1.5rem;
@@ -370,7 +346,6 @@ a:hover { text-decoration: underline; }
   .hero-cover { max-width: 360px; margin: 0 auto; }
   .hero-actions { justify-content: center; }
   .lede { margin-left: auto; margin-right: auto; }
-  .two-col { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
