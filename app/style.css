@@ -7,8 +7,8 @@
   --bg:        #0c0c0a;
   --bg-alt:    #14140f;
   --panel:     #1c1c16;
-  --ink:       #f5efe1;
-  --ink-dim:   #d6cfbe;
+  --ink:       #f8f6f0;
+  --ink-dim:   #e9e4d9;
   --gold:      #f0c14b;
   --gold-deep: #c9982e;
   --gold-soft: #c9a44f;
@@ -203,8 +203,9 @@ a:hover { text-decoration: underline; }
   max-width: 46em;
   margin: 0 auto 3rem;
 }
-.book-text { max-width: 720px; margin: 0 auto; }
-.book-text p + p { margin-top: 1.2rem; }
+.book-text { max-width: 720px; margin: 0 auto; text-align: center; }
+.book-text p + p { margin-top: 1.4rem; }
+.book-text em { color: var(--gold); font-style: normal; }
 .dropcap::first-letter {
   font-family: var(--serif);
   font-weight: 700;
@@ -214,113 +215,6 @@ a:hover { text-decoration: underline; }
   padding: 0.08em 0.12em 0 0;
   color: var(--gold);
 }
-/* ---------- Specs (in The Book) ---------- */
-.specs {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  max-width: 820px;
-  margin: 3.2rem auto 0;
-}
-.specs li {
-  text-align: center;
-  padding: 1.4rem 0.6rem;
-  border: 1px solid var(--line);
-  background: rgba(240, 193, 75, 0.03);
-}
-.spec-num {
-  display: block;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: clamp(1.8rem, 3.4vw, 2.5rem);
-  line-height: 1;
-  color: var(--gold);
-}
-.spec-label {
-  display: block;
-  margin-top: 0.55rem;
-  font-family: var(--serif);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-.spec-sections {
-  max-width: 720px;
-  margin: 1.6rem auto 0;
-  text-align: center;
-  color: var(--ink);
-}
-.spec-sections em { color: var(--ink); font-style: normal; }
-
-/* ---------- Page map ---------- */
-.pagemap { margin-top: 2.6rem; text-align: center; }
-.pagemap-strip {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.pgw { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-.pg {
-  width: 52px;
-  height: 70px;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  position: relative;
-}
-.pgl {
-  font-family: var(--serif);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-}
-.pg-text {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0 7px,
-    rgba(214, 207, 190, 0.55) 7px 8px
-  );
-  background-size: 62% 74%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.pg-art::after {
-  content: "";
-  position: absolute;
-  inset: 24% 22%;
-  border: 1px solid rgba(240, 193, 75, 0.65);
-  border-radius: 50% 50% 45% 45%;
-}
-.pg-blank::after {
-  content: "";
-  position: absolute;
-  inset: 5px;
-  border: 1px solid rgba(240, 193, 75, 0.18);
-}
-.pagemap-note {
-  max-width: 620px;
-  margin: 1.8rem auto 0;
-  color: var(--ink);
-  font-size: 1.05rem;
-}
-.pagemap-note strong { color: var(--gold); }
-
-/* ---------- Spec panel wrapper ---------- */
-.spec-panel {
-  max-width: 860px;
-  margin: 3.4rem auto 0;
-  padding: 2.6rem 2.2rem 2.4rem;
-  border: 1px solid var(--line);
-  background: rgba(240, 193, 75, 0.025);
-}
-.spec-panel .specs { margin-top: 0; }
-.spec-panel .spec-sections { margin-top: 1.8rem; }
-
 .gift-note {
   max-width: 640px;
   margin: 2.6rem auto 0;
@@ -349,40 +243,20 @@ a:hover { text-decoration: underline; }
     var(--bg);
 }
 .contest-inner { text-align: center; }
-.contest-flag {
-  margin-top: 0.4rem;
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-.contest-title {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-  line-height: 1.1;
-  color: var(--ink);
-  margin: 0.5rem 0 1.8rem;
-}
-.contest .volume2-date { margin-bottom: 0; }
-.contest .rule { margin: 1.6rem auto 2.4rem; }
 .steps {
   list-style: none;
   counter-reset: step;
-  max-width: 640px;
+  max-width: 620px;
   margin: 0 auto;
   text-align: left;
 }
 .steps li {
   counter-increment: step;
   position: relative;
-  padding-left: 3.4rem;
-  margin-bottom: 1.6rem;
+  padding-left: 3.2rem;
+  margin-bottom: 1.5rem;
   color: var(--ink);
 }
-.steps li strong { color: var(--ink); display: block; }
 .steps li::before {
   content: counter(step);
   position: absolute;
@@ -399,47 +273,44 @@ a:hover { text-decoration: underline; }
   font-size: 1rem;
   color: var(--gold);
 }
-.contest-spec {
-  max-width: 640px;
-  margin: 2rem auto 0;
-  padding-top: 1.6rem;
-  border-top: 1px solid rgba(240,193,75,0.14);
-  color: var(--ink);
-  font-size: 1.05rem;
-}
-.prize {
-  max-width: 640px;
-  margin: 2.6rem auto 0;
-  padding: 1.8rem 2rem;
-  border: 1px solid var(--line);
-  background: rgba(240, 193, 75, 0.04);
-  text-align: left;
-}
-.prize-title {
+.photo-help { margin-top: 0.7rem; }
+.photo-help summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-block;
   font-family: var(--serif);
   font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold-soft);
-  margin-bottom: 0.9rem;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(240,193,75,0.35);
+  padding-bottom: 2px;
 }
-.prize ul { list-style: none; }
-.prize li {
+.photo-help summary::-webkit-details-marker { display: none; }
+.photo-help summary::after { content: " +"; }
+.photo-help[open] summary::after { content: " \2013"; }
+.photo-help ul {
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 0;
+}
+.photo-help li {
   position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.6rem;
+  padding-left: 1.3rem;
+  margin-bottom: 0.55rem;
+  font-size: 1rem;
   color: var(--ink);
 }
-.prize li:last-child { margin-bottom: 0; }
-.prize li::before {
+.photo-help li::before {
   content: "\25C6";
   position: absolute;
   left: 0;
-  top: 0.05em;
-  font-size: 0.6rem;
+  top: 0.15em;
+  font-size: 0.55rem;
   color: var(--gold);
 }
+
 .contest-actions {
   display: flex;
   flex-wrap: wrap;
@@ -500,23 +371,6 @@ a:hover { text-decoration: underline; }
 .download-note { margin-top: 1rem; color: var(--ink-dim); font-size: 1rem; }
 
 /* ---------- Volume 2 ---------- */
-.volume2 {
-  background:
-    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(240,193,75,0.08), transparent 70%),
-    var(--bg);
-  text-align: center;
-}
-.volume2-inner { max-width: 760px; }
-.volume2 .kicker { color: var(--gold-soft); }
-.volume2-date {
-  font-family: var(--serif);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 0.8rem 0 1.6rem;
-}
 
 /* ---------- Bio ---------- */
 .bio p { margin-bottom: 1.4rem; color: var(--ink); }
@@ -601,32 +455,16 @@ a:hover { text-decoration: underline; }
   .hero-actions { justify-content: center; }
   .lede { margin-left: auto; margin-right: auto; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
-  .specs { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
-  .pg { width: 26px; height: 36px; }
-  .pagemap-strip { gap: 4px; }
-  .prize { padding: 1.4rem 1.2rem; }
   .contest-actions .btn { width: 100%; text-align: center; }
 }
 @media (max-width: 720px) {
-  .nav-toggle { display: flex; }
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    background: rgba(12, 12, 10, 0.98);
-    border-bottom: 1px solid var(--line);
-    padding: 0.6rem 4vw 1.2rem;
-    display: none;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a:not(.btn) { padding: 0.85rem 0; border-bottom: 1px solid rgba(240,193,75,0.12); }
-  .nav-links .btn { margin-top: 0.9rem; text-align: center; }
+  .nav-toggle { display: none; }
+  .nav-links { gap: 1.1rem; }
+  .nav-links a:not(.btn) { font-size: 0.85rem; letter-spacing: 0.1em; }
+  .nav { padding: 0.75rem 4vw; }
+  .wordmark { font-size: 1.1rem; letter-spacing: 0.16em; }
   .section { padding: 4rem 5vw; }
   .hero { padding: 3rem 5vw 5rem; min-height: auto; }
   .scroll-hint { display: none; }
