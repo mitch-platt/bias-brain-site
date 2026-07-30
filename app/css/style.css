@@ -214,6 +214,239 @@ a:hover { text-decoration: underline; }
   padding: 0.08em 0.12em 0 0;
   color: var(--gold);
 }
+/* ---------- Specs (in The Book) ---------- */
+.specs {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 820px;
+  margin: 3.2rem auto 0;
+}
+.specs li {
+  text-align: center;
+  padding: 1.4rem 0.6rem;
+  border: 1px solid var(--line);
+  background: rgba(240, 193, 75, 0.03);
+}
+.spec-num {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+  line-height: 1;
+  color: var(--gold);
+}
+.spec-label {
+  display: block;
+  margin-top: 0.55rem;
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.spec-sections {
+  max-width: 720px;
+  margin: 1.6rem auto 0;
+  text-align: center;
+  color: var(--ink-dim);
+}
+.spec-sections em { color: var(--ink); font-style: normal; }
+
+/* ---------- Page map ---------- */
+.pagemap { max-width: 720px; margin: 3.2rem auto 0; text-align: center; }
+.pagemap-strip {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.pg {
+  width: 34px;
+  height: 46px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  position: relative;
+}
+.pg-text {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 6px,
+    rgba(189, 181, 161, 0.45) 6px 7px
+  );
+  background-size: 60% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.pg-art::after {
+  content: "";
+  position: absolute;
+  inset: 22% 20%;
+  border: 1px solid rgba(240, 193, 75, 0.55);
+  border-radius: 50% 50% 45% 45%;
+}
+.pg-blank::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(240, 193, 75, 0.16);
+}
+.pagemap-key {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1rem;
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.pagemap-key li { display: flex; align-items: center; gap: 0.45rem; }
+.key { width: 13px; height: 17px; border: 1px solid var(--line); background: var(--panel); display: inline-block; }
+.key-text { background-image: repeating-linear-gradient(to bottom, transparent 0 3px, rgba(189,181,161,.5) 3px 4px); }
+.key-art { border-color: rgba(240,193,75,.55); }
+.key-blank { background: transparent; }
+.pagemap-note {
+  margin-top: 1.4rem;
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+}
+.pagemap-note strong { color: var(--ink); }
+
+.gift-note {
+  max-width: 640px;
+  margin: 2.4rem auto 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--ink-dim);
+}
+
+/* ---------- Buy + badge ---------- */
+.book-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 3.2rem;
+}
+.amazon-badge { width: 170px; height: auto; opacity: 0.9; }
+
+/* ---------- Contest ---------- */
+.contest {
+  border-top: 1px solid rgba(240, 193, 75, 0.12);
+  background:
+    radial-gradient(ellipse 65% 75% at 50% 30%, rgba(240,193,75,0.07), transparent 70%),
+    var(--bg);
+}
+.contest-inner { text-align: center; }
+.steps {
+  list-style: none;
+  counter-reset: step;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+}
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 3.4rem;
+  margin-bottom: 1.6rem;
+  color: var(--ink-dim);
+}
+.steps li strong { color: var(--ink); display: block; }
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -0.15em;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--gold);
+}
+.contest-spec {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(240,193,75,0.14);
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+}
+.prize {
+  max-width: 640px;
+  margin: 2.6rem auto 0;
+  padding: 1.8rem 2rem;
+  border: 1px solid var(--line);
+  background: rgba(240, 193, 75, 0.04);
+  text-align: left;
+}
+.prize-title {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin-bottom: 0.9rem;
+}
+.prize ul { list-style: none; }
+.prize li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  color: var(--ink-dim);
+}
+.prize li:last-child { margin-bottom: 0; }
+.prize li::before {
+  content: "\25C6";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-size: 0.6rem;
+  color: var(--gold);
+}
+.contest-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.6rem;
+}
+.btn.is-disabled {
+  pointer-events: none;
+  opacity: 0.38;
+  border-style: dashed;
+  box-shadow: none;
+}
+.contest-meta {
+  margin-top: 1.6rem;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+.contest-list {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  color: var(--ink-dim);
+}
+
 /* ---------- Gallery ---------- */
 .gallery {
   display: grid;
@@ -347,6 +580,13 @@ a:hover { text-decoration: underline; }
   .hero-actions { justify-content: center; }
   .lede { margin-left: auto; margin-right: auto; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
+  .specs { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .pg { width: 26px; height: 36px; }
+  .pagemap-strip { gap: 4px; }
+  .prize { padding: 1.4rem 1.2rem; }
+  .contest-actions .btn { width: 100%; text-align: center; }
 }
 @media (max-width: 720px) {
   .nav-toggle { display: flex; }
