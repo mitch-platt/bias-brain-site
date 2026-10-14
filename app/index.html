@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bias Brain Press - Cognitive Biases: A Coloring Book</title>
+  <meta name="description" content="Bias Brain Press publishes Cognitive Biases: Judgments and Perceptions - a coloring book about the flawed shortcuts your brain loves. Download free sample pages and join the email list.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #virtue-explorer { --ve-line:#d8d0c2; --ve-link:#135e96; --ve-dependent:#276678; --ve-support:#3b7a57; --ve-constrains:#a34a28; --ve-constrained:#76528b; }
+    #virtue-explorer .ve-intro { max-width:760px; margin:0 auto 1.5rem; text-align:center; }
+    #virtue-explorer .ve-layout { display:grid; grid-template-columns:minmax(220px,.72fr) minmax(0,1.8fr); gap:1.25rem; align-items:start; }
+    #virtue-explorer .ve-index,#virtue-explorer .ve-map { padding:1.1rem; border:1px solid var(--ve-line); border-radius:10px; background:#fffdf8; }
+    #virtue-explorer .ve-index h3,#virtue-explorer .ve-map h3 { margin:0 0 .8rem; font-family:'Cormorant Garamond',Georgia,serif; font-size:1.5rem; }
+    #virtue-explorer .ve-index-list { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+    #virtue-explorer button { font:inherit; cursor:pointer; }
+    #virtue-explorer .ve-index-button,#virtue-explorer .ve-link { border:1px solid var(--ve-line); border-radius:6px; background:white; color:var(--ve-link); text-align:left; text-decoration:underline; text-underline-offset:.15em; }
+    #virtue-explorer .ve-index-button { min-height:40px; padding:.45rem .6rem; }
+    #virtue-explorer .ve-link { padding:.25rem .4rem; font-size:.9rem; }
+    #virtue-explorer .ve-index-button[aria-pressed="true"] { border-color:var(--ve-link); background:#eaf2f8; color:#173c56; font-weight:700; }
+    #virtue-explorer button:hover { background:#f3eee4; }
+    #virtue-explorer button:focus-visible { outline:3px solid #d59b32; outline-offset:2px; }
+    #virtue-explorer .ve-map-heading { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; }
+    #virtue-explorer .ve-map-heading p,#virtue-explorer .ve-note { color:#665f54; font-size:.9rem; }
+    #virtue-explorer .ve-map-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(125px,.55fr) minmax(0,1fr); grid-template-rows:1fr 1fr; grid-template-areas:"dependent focus supports" "constrains focus constrained"; gap:.75rem; }
+    #virtue-explorer .ve-group { min-width:0; padding:.75rem; border:1px solid currentColor; border-radius:8px; background:white; }
+    #virtue-explorer .ve-group h4 { margin:0 0 .5rem; font-size:.9rem; }
+    #virtue-explorer .ve-dependent { grid-area:dependent; color:var(--ve-dependent); }
+    #virtue-explorer .ve-supports { grid-area:supports; color:var(--ve-support); }
+    #virtue-explorer .ve-constrains { grid-area:constrains; color:var(--ve-constrains); }
+    #virtue-explorer .ve-constrained { grid-area:constrained; color:var(--ve-constrained); }
+    #virtue-explorer .ve-links { display:flex; flex-wrap:wrap; gap:.35rem; }
+    #virtue-explorer .ve-focus { grid-area:focus; align-self:center; padding:.8rem .4rem; border-radius:8px; background:var(--ve-link); color:white; font-family:'Cormorant Garamond',Georgia,serif; font-size:1.3rem; font-weight:700; text-align:center; overflow-wrap:anywhere; }
+    #virtue-explorer .ve-note { margin:.8rem 0 0; }
+    @media(max-width:760px) { #virtue-explorer .ve-layout{grid-template-columns:1fr} #virtue-explorer .ve-map-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;grid-template-areas:"focus focus" "dependent supports" "constrains constrained"} #virtue-explorer .ve-focus{justify-self:center;min-width:45%} }
+    @media(max-width:480px) { #virtue-explorer .ve-map-grid{grid-template-columns:1fr;grid-template-areas:"focus" "dependent" "supports" "constrains" "constrained"} }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a class="wordmark" href="#top">Bias Brain Press</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#virtue-explorer">Virtue Explorer</a>
+      <a href="mailto:mitch@biasbrain.press">Contact Me</a>
+      <a class="btn btn-small btn-gold" href="https://forms.cloud.microsoft/r/vApkrmTgNT" target="_blank" rel="noopener">Find Out First</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-cover">
+        <img src="images/cover.jpg" alt="Cover of Cognitive Biases: Judgments and Perceptions, Volume 1 - a coloring book by Mitch Platt" width="542" height="681">
+        <div class="cover-glow" aria-hidden="true"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="kicker">Volume 1 &middot; A coloring book by Mitch Platt</p>
+        <h1>Cognitive Biases:<br><span>Judgments &amp; Perceptions</span></h1>
+        <p class="lede">A coloring book about the shortcuts your brain takes and the ridiculous ways they fail. No mandalas. No flowers. Just flawed thinking to be colored.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="https://www.amazon.com/dp/B0HBMC6KRS" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-outline" href="#free">Get Free Sample Pages</a>
+        </div>
+      </div>
+    </div>
+    <a class="scroll-hint" href="#book" aria-label="Scroll down">&darr;</a>
+  </section>
+
+  <!-- ============ THE BOOK ============ -->
+  <section class="section" id="book">
+    <div class="wrap">
+      <h2 class="section-title">The Book</h2>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="book-text">
+        <p class="dropcap">Your brain is lying to you right now. It does it constantly, automatically, and usually in ways you never notice.</p>
+        <p>Fifteen biases across 64 pages, 8.5 by 11 inches. Each one gets a <em>Definition</em>, <em>History</em>, <em>Variant</em>, <em>Usage&nbsp;Note</em> and <em>Example</em> on one page, and a full page to color on the other. Two blank pages after every spread, so nothing bleeds through onto an illustration.</p>
+      </div>
+
+      <p class="gift-note">Also a decent gift for the overthinker, the therapist, the student, or the person who is definitely wrong and definitely not listening.</p>
+
+      <div class="book-cta">
+        <a class="btn btn-gold btn-large" href="https://www.amazon.com/dp/B0HBMC6KRS" target="_blank" rel="noopener">Buy Volume 1</a>
+        <img class="amazon-badge" src="images/available-at-amazon.png" alt="Available at Amazon" width="170" height="83" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="virtue-explorer">
+    <div class="wrap">
+      <h2 class="section-title">Disposition Relationship Explorer</h2>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="ve-intro"><p class="section-lede">Choose a disposition, then click any connected name to explore its relationships. Each map opens here, and each selection has its own shareable link.</p></div>
+      <div class="ve-layout">
+        <aside class="ve-index" aria-labelledby="ve-index-title"><h3 id="ve-index-title">Disposition index</h3><div class="ve-index-list" id="veIndex"></div></aside>
+        <div class="ve-map" aria-live="polite" aria-atomic="true">
+          <div class="ve-map-heading"><h3 id="veTitle">Empathy</h3><p>Click any name to continue.</p></div>
+          <div class="ve-map-grid" id="veMap"></div>
+          <p class="ve-note">Relationship labels and direction are shown as defined in the model.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FREE SAMPLE PAGES ============ -->
+  <section class="section section-alt" id="free">
+    <div class="wrap">
+      <h2 class="section-title">Free Sample Spreads</h2>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="section-lede">Two complete spreads from Volume 1 - <strong>Status Quo Bias</strong> and <strong>Pro-Innovation Bias</strong> - free to download and print. Each spread is one text page and one coloring page. Click any page to preview it full-size.</p>
+
+      <div class="gallery">
+        <figure class="gallery-item" data-full="images/status-quo-text.jpg">
+          <img src="images/status-quo-text.jpg" alt="Status Quo Bias - text page with definition, history, and example" loading="lazy">
+          <figcaption>Status Quo Bias &middot; Text Page</figcaption>
+        </figure>
+        <figure class="gallery-item" data-full="images/status-quo-coloring.jpg">
+          <img src="images/status-quo-coloring.jpg" alt="Status Quo Bias - coloring page of a prehistoric hunter-gatherer scene" loading="lazy">
+          <figcaption>Status Quo Bias &middot; Coloring Page</figcaption>
+        </figure>
+        <figure class="gallery-item" data-full="images/pro-innovation-text.jpg">
+          <img src="images/pro-innovation-text.jpg" alt="Pro-Innovation Bias - text page with definition, history, and example" loading="lazy">
+          <figcaption>Pro-Innovation Bias &middot; Text Page</figcaption>
+        </figure>
+        <figure class="gallery-item" data-full="images/pro-innovation-coloring.jpg">
+          <img src="images/pro-innovation-coloring.jpg" alt="Pro-Innovation Bias - coloring page of a robot chef in a gadget-filled kitchen" loading="lazy">
+          <figcaption>Pro-Innovation Bias &middot; Coloring Page</figcaption>
+        </figure>
+      </div>
+
+      <div class="download-cta">
+        <a class="btn btn-gold btn-large" href="downloads/bias-brain-sample-spreads.pdf" download>Download Both Spreads (PDF)</a>
+        <p class="download-note">One 4-page PDF, print-ready at 8.5&times;11&Prime;. Free for personal use.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VOLUME 2 + CONTEST ============ -->
+  <section class="section contest" id="volume2">
+    <div class="wrap wrap-narrow contest-inner">
+      <p class="kicker">Release October 1, 2026</p>
+      <h2 class="section-title">Volume 2 &mdash; Social Dynamics</h2>
+      <div class="rule" aria-hidden="true"></div>
+
+      <p class="section-lede">Get your art on the cover, win the entire Cognitive Biases Series, see details below.</p>
+
+      <ol class="steps">
+        <li>Download the page.</li>
+        <li>Color it.</li>
+        <li>
+          Scan your image to ensure it can be used. High quality photos will be ok.
+          <details class="photo-help">
+            <summary>How to photograph it</summary>
+            <ul>
+              <li>Press the page flat &mdash; a book on each corner works.</li>
+              <li>Daylight near a window, no direct sun. No flash: it blows out the paper and kills your color.</li>
+              <li>Hold the camera straight above the centre of the page, not at an angle.</li>
+              <li>Fill the frame with the page. Don&rsquo;t crop into the art.</li>
+              <li>Watch for your own shadow falling across the paper.</li>
+              <li>Shoot at your camera&rsquo;s highest quality setting.</li>
+            </ul>
+          </details>
+        </li>
+        <li>Please make sure your file is high resolution or it will not be able to be used. If you have a GIMP file, Adobe file or something similar, please export as a standard image file.</li>
+        <li>Email your submission to <a href="mailto:colormycover@biasbrain.press">colormycover@biasbrain.press</a>. If your file is too large to be attached it is best to use a Google Drive or Microsoft OneDrive share link.</li>
+      </ol>
+
+      <div class="contest-actions">
+        <!-- PLACEHOLDER: drop the PDF at app/downloads/bias-brain-contest-page.pdf, then delete "is-disabled" from the line below -->
+        <a class="btn btn-gold btn-large is-disabled" href="downloads/bias-brain-contest-page.pdf" download>Download the Page</a>
+        <a class="btn btn-outline btn-large" href="mailto:colormycover@biasbrain.press">Submit Here</a>
+      </div>
+
+      <p class="contest-meta">Winner decided September&nbsp;25</p>
+      <p class="contest-list">Didn&rsquo;t catch this one in time? <a href="https://forms.cloud.microsoft/r/vApkrmTgNT" target="_blank" rel="noopener">Get on the list</a> and you&rsquo;ll know when the next cover opens up.</p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section section-alt" id="about">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title">About Bias Brain Press</h2>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="bio">
+        <p class="bio-lead"><strong>I color. I train AI.</strong></p>
+        <p>I got tired of waiting for someone else to make the thing I actually wanted to buy. The coloring book market has roughly 100,000 titles that all share the same DNA: mandalas, flowers, steampunk girls, and swear words, repeat. I searched for something different and found nothing. So I decided to build it myself, but I had one rule, if I'm doing this, it's going to be a quality product. Not a side hustle. Not a quick throw-together. The idea sat for two years while I worked my day job training large language models. I'm into philosophy and human behavior so I thought, a cognitive biases coloring book... Did I mention I can't draw?</p>
+        <p>What I am good at is prompting AI models with meticulously engineered instructions to make them output exactly what I want. Four years of training AI models taught me how to make machines do precise, repeatable work. So I built an app... well, I instructed an LLM to build it. An app that calls the top image generation APIs. I wrote a set of system instructions that dictates the style of the art before I even say a word. The app scales the image to the correct aspect ratio, and exports print-ready resolution. Two months of iterating prompts and finding the right model for the job. I rebuilt the app from scratch three times, but finally, I was ready to start working.</p>
+        <p>Only then I realized, a bias happens inside a person's head. How was I going to get this onto a single page, in one frame, with no words? Fifteen times? It never crossed my mind how hard this would be to get right, but I also never intended to just throw together some AI slop. I wanted to make something genuinely interesting and something I'd actually want to color.</p>
+        <p class="bio-signoff">This is Bias Brain. Volume 1 is just the start.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="wrap wrap-narrow contact-inner">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="section-lede">Questions, press, or colored-in pages you're proud of:</p>
+      <p><a class="contact-email" href="mailto:mitch@biasbrain.press">mitch@biasbrain.press</a></p>
+      <p class="contact-signup">News and release dates via the email list: <a href="https://forms.cloud.microsoft/r/vApkrmTgNT" target="_blank" rel="noopener">signup.biasbrain.press</a></p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <p class="footer-wordmark">Bias Brain Press</p>
+    <p>&copy; 2026 Bias Brain Press &middot; <a href="https://biasbrain.press">biasbrain.press</a></p>
+    <p class="footer-small">Sample pages are free for personal, non-commercial use. Book and artwork &copy; Mitch Platt.</p>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+    <img id="lightboxImg" src="" alt="Full-size page preview">
+  </div>
+
+  <script>
+    const dispositions = [
+      {id:'authenticity',name:'Authenticity',dependentOn:['Humility','Knowledge','Confidence','Awareness','Honesty','Alignment','Empathy','Consideration','Kindness'],supports:['Honesty','Alignment','Awareness','Consideration','Kindness'],constrains:['Confidence','Awareness','Humility'],constrainedBy:['Knowledge','Humility','Consideration','Kindness','Constraint','Honesty','Respect']},
+      {id:'consideration',name:'Consideration',dependentOn:['Awareness','Knowledge','Humility','Constraint','Empathy','Authenticity','Confidence','Honesty','Kindness','Alignment','Respect'],supports:['Kindness','Alignment','Authenticity','Honesty','Empathy','Constraint','Respect'],constrains:['Kindness','Honesty','Authenticity','Empathy','Constraint','Alignment','Respect'],constrainedBy:['Knowledge','Awareness','Constraint','Alignment']},
+      {id:'humility',name:'Humility',dependentOn:['Awareness','Knowledge','Honesty','Confidence'],supports:['Authenticity','Knowledge','Awareness','Honesty','Alignment','Consideration','Empathy','Confidence','Constraint','Respect'],constrains:['Confidence','Knowledge','Honesty','Empathy','Authenticity','Awareness'],constrainedBy:['Knowledge','Confidence','Authenticity','Honesty']},
+      {id:'confidence',name:'Confidence',dependentOn:['Knowledge','Awareness','Humility'],supports:['Authenticity','Honesty','Humility','Consideration'],constrains:['Humility','Awareness'],constrainedBy:['Knowledge','Humility','Authenticity','Awareness','Empathy','Honesty']},
+      {id:'knowledge',name:'Knowledge',dependentOn:['Awareness','Humility','Honesty'],supports:['Confidence','Humility','Authenticity','Awareness','Alignment','Consideration','Constraint','Honesty','Empathy','Kindness','Respect'],constrains:['Confidence','Honesty','Authenticity','Consideration','Empathy','Humility','Awareness','Kindness','Constraint','Alignment','Respect'],constrainedBy:['Humility','Awareness','Honesty']},
+      {id:'awareness',name:'Awareness',dependentOn:['Humility','Knowledge','Honesty','Empathy','Authenticity','Alignment'],supports:['Authenticity','Knowledge','Humility','Alignment','Consideration','Kindness','Constraint','Empathy','Confidence','Honesty','Respect'],constrains:['Confidence','Honesty','Kindness','Consideration','Knowledge','Constraint','Alignment','Respect'],constrainedBy:['Knowledge','Humility','Authenticity','Confidence','Constraint']},
+      {id:'honesty',name:'Honesty',dependentOn:['Awareness','Knowledge','Humility','Authenticity','Confidence','Consideration','Kindness','Alignment','Respect'],supports:['Knowledge','Awareness','Humility','Authenticity','Alignment','Consideration'],constrains:['Confidence','Humility','Authenticity','Knowledge'],constrainedBy:['Knowledge','Humility','Awareness','Consideration','Kindness','Constraint','Empathy','Alignment','Respect']},
+      {id:'kindness',name:'Kindness',dependentOn:['Consideration','Awareness','Knowledge','Constraint','Empathy','Authenticity','Alignment','Respect'],supports:['Consideration','Alignment','Honesty','Authenticity'],constrains:['Honesty','Authenticity'],constrainedBy:['Consideration','Awareness','Knowledge','Constraint','Alignment','Empathy','Respect']},
+      {id:'empathy',name:'Empathy',dependentOn:['Consideration','Awareness','Knowledge','Humility','Alignment','Constraint','Respect'],supports:['Consideration','Kindness','Awareness','Alignment','Constraint','Authenticity'],constrains:['Confidence','Honesty','Kindness','Alignment'],constrainedBy:['Knowledge','Humility','Consideration','Constraint','Alignment','Respect']},
+      {id:'constraint',name:'Constraint',dependentOn:['Awareness','Consideration','Empathy','Knowledge','Humility','Alignment','Respect'],supports:['Consideration','Kindness','Empathy','Alignment'],constrains:['Kindness','Honesty','Authenticity','Empathy','Consideration','Awareness','Alignment'],constrainedBy:['Consideration','Knowledge','Awareness','Alignment']},
+      {id:'alignment',name:'Alignment',dependentOn:['Awareness','Knowledge','Honesty','Humility','Empathy','Consideration','Authenticity','Kindness','Constraint','Respect'],supports:['Authenticity','Honesty','Awareness','Consideration','Kindness','Constraint','Empathy'],constrains:['Empathy','Kindness','Consideration','Honesty','Constraint','Respect'],constrainedBy:['Knowledge','Awareness','Consideration','Empathy','Constraint']},
+      {id:'respect',name:'Respect',dependentOn:['Consideration','Awareness','Humility','Knowledge'],supports:['Empathy','Consideration','Kindness','Honesty','Constraint','Alignment'],constrains:['Honesty','Kindness','Empathy','Authenticity'],constrainedBy:['Knowledge','Awareness','Consideration','Alignment']}
+    ];
+    const veIndex=document.getElementById('veIndex'),veTitle=document.getElementById('veTitle'),veMap=document.getElementById('veMap');
+    const veGroups=[{key:'dependentOn',title:'Dependent On',style:'ve-dependent'},{key:'supports',title:'Supports',style:'ve-supports'},{key:'constrains',title:'Constrains',style:'ve-constrains'},{key:'constrainedBy',title:'Constrained By',style:'ve-constrained'}];
+    function selectDisposition(id,updateAddress=false){
+      const selected=dispositions.find(item=>item.id===id)||dispositions.find(item=>item.id==='empathy');
+      veTitle.textContent=selected.name;
+      veIndex.querySelectorAll('button').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.disposition===selected.id)));
+      veMap.replaceChildren();
+      veGroups.forEach(group=>{
+        const panel=document.createElement('section');panel.className=`ve-group ${group.style}`;
+        const heading=document.createElement('h4');heading.textContent=group.title;
+        const links=document.createElement('div');links.className='ve-links';
+        selected[group.key].forEach(name=>{
+          const target=dispositions.find(item=>item.name===name);if(!target)return;
+          const button=document.createElement('button');button.type='button';button.className='ve-link';button.textContent=name;
+          button.setAttribute('aria-label',`Open ${name} relationship map`);
+          button.addEventListener('click',()=>selectDisposition(target.id,true));links.append(button);
+        });
+        panel.append(heading,links);veMap.append(panel);
+      });
+      const focus=document.createElement('div');focus.className='ve-focus';focus.textContent=selected.name;veMap.append(focus);
+      if(updateAddress){const address=new URL(window.location.href);address.searchParams.set('disposition',selected.id);address.hash='virtue-explorer';history.pushState(null,'',address);}
+    }
+    dispositions.forEach(item=>{
+      const button=document.createElement('button');button.type='button';button.className='ve-index-button';button.dataset.disposition=item.id;button.textContent=item.name;button.setAttribute('aria-pressed','false');
+      button.addEventListener('click',()=>selectDisposition(item.id,true));veIndex.append(button);
+    });
+    function selectFromAddress(){selectDisposition(new URLSearchParams(location.search).get('disposition')||'empathy');}
+    window.addEventListener('hashchange',selectFromAddress);window.addEventListener('popstate',selectFromAddress);selectFromAddress();
+  </script>
+
+  <script>
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.dataset.full;
+        lightboxImg.alt = item.querySelector('img').alt;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
