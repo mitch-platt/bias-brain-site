@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    #virtue-explorer { --ve-line:#d8d0c2; --ve-link:#135e96; --ve-dependent:#276678; --ve-support:#3b7a57; --ve-constrains:#a34a28; --ve-constrained:#76528b; --ve-bridge:#135e96; --ve-moral:#a34a28; --ve-epistemic:#3b7a57; }
+    #virtue-explorer { --ve-line:#d8d0c2; --ve-link:#135e96; --ve-dependent:#276678; --ve-support:#3b7a57; --ve-Constrains:#a34a28; --ve-constrained:#76528b; --ve-bridge:#135e96; --ve-moral:#a34a28; --ve-epistemic:#3b7a57; }
     #virtue-explorer .ve-intro { max-width:760px; margin:0 auto 1.5rem; text-align:center; }
     #virtue-explorer .ve-layout { display:grid; grid-template-columns:minmax(220px,.72fr) minmax(0,1.8fr); gap:1.25rem; align-items:start; }
     #virtue-explorer .ve-index,#virtue-explorer .ve-map { padding:1.1rem; border:1px solid var(--ve-line); border-radius:10px; background:#fffdf8; }
@@ -35,12 +35,12 @@
     #virtue-explorer button:focus-visible { outline:3px solid #d59b32; outline-offset:2px; }
     #virtue-explorer .ve-map-heading { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; }
     #virtue-explorer .ve-map-heading p,#virtue-explorer .ve-note { color:#665f54; font-size:.9rem; }
-    #virtue-explorer .ve-map-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(125px,.55fr) minmax(0,1fr); grid-template-rows:1fr 1fr; grid-template-areas:"dependent focus supports" "constrains focus constrained"; gap:.75rem; }
+    #virtue-explorer .ve-map-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(125px,.55fr) minmax(0,1fr); grid-template-rows:1fr 1fr; grid-template-areas:"dependent focus Supports" "Constrains focus constrained"; gap:.75rem; }
     #virtue-explorer .ve-group { min-width:0; padding:.75rem; border:1px solid currentColor; border-radius:8px; background:white; }
     #virtue-explorer .ve-group h4 { margin:0 0 .5rem; font-size:.9rem; }
     #virtue-explorer .ve-dependent { grid-area:dependent; color:var(--ve-dependent); }
-    #virtue-explorer .ve-supports { grid-area:supports; color:var(--ve-support); }
-    #virtue-explorer .ve-constrains { grid-area:constrains; color:var(--ve-constrains); }
+    #virtue-explorer .ve-Supports { grid-area:Supports; color:var(--ve-support); }
+    #virtue-explorer .ve-Constrains { grid-area:Constrains; color:var(--ve-Constrains); }
     #virtue-explorer .ve-constrained { grid-area:constrained; color:var(--ve-constrained); }
     #virtue-explorer .ve-links { display:flex; flex-wrap:wrap; gap:.35rem; }
     #virtue-explorer .ve-focus { grid-area:focus; align-self:center; padding:.8rem .4rem; border:1px solid transparent; border-radius:8px; font-family:'Cormorant Garamond',Georgia,serif; font-size:1.3rem; font-weight:700; text-align:center; overflow-wrap:anywhere; }
@@ -56,8 +56,8 @@
     #virtue-explorer .ve-function-group.ve-category-epistemic { color:var(--ve-epistemic); }
     #virtue-explorer .ve-function-item { margin:.75rem 0 0; color:#37332e; }
     #virtue-explorer .ve-function-item strong { display:block; margin-bottom:.15rem; color:inherit; }
-    @media(max-width:760px) { #virtue-explorer .ve-layout{grid-template-columns:1fr} #virtue-explorer .ve-map-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;grid-template-areas:"focus focus" "dependent supports" "constrains constrained"} #virtue-explorer .ve-focus{justify-self:center;min-width:45%} #virtue-explorer .ve-function-groups{grid-template-columns:1fr} }
-    @media(max-width:480px) { #virtue-explorer .ve-map-grid{grid-template-columns:1fr;grid-template-areas:"focus" "dependent" "supports" "constrains" "constrained"} }
+    @media(max-width:760px) { #virtue-explorer .ve-layout{grid-template-columns:1fr} #virtue-explorer .ve-map-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;grid-template-areas:"focus focus" "dependent Supports" "Constrains constrained"} #virtue-explorer .ve-focus{justify-self:center;min-width:45%} #virtue-explorer .ve-function-groups{grid-template-columns:1fr} }
+    @media(max-width:480px) { #virtue-explorer .ve-map-grid{grid-template-columns:1fr;grid-template-areas:"focus" "dependent" "Supports" "Constrains" "constrained"} }
   </style>
 </head>
 <body>
@@ -258,36 +258,36 @@
 
   <script>
     const dispositions = [
-      {id:'authenticity',name:'Authenticity',dependentOn:['Humility','Knowledge','Confidence','Awareness','Honesty','Alignment','Empathy','Consideration','Kindness'],supports:['Honesty','Alignment','Awareness','Consideration','Kindness'],constrains:['Confidence','Awareness','Humility'],constrainedBy:['Knowledge','Humility','Consideration','Kindness','Constraint','Honesty','Respect']},
-      {id:'consideration',name:'Consideration',dependentOn:['Awareness','Knowledge','Humility','Constraint','Empathy','Authenticity','Confidence','Honesty','Kindness','Alignment','Respect'],supports:['Kindness','Alignment','Authenticity','Honesty','Empathy','Constraint','Respect'],constrains:['Kindness','Honesty','Authenticity','Empathy','Constraint','Alignment','Respect'],constrainedBy:['Knowledge','Awareness','Constraint','Alignment']},
-      {id:'humility',name:'Humility',dependentOn:['Awareness','Knowledge','Honesty','Confidence'],supports:['Authenticity','Knowledge','Awareness','Honesty','Alignment','Consideration','Empathy','Confidence','Constraint','Respect'],constrains:['Confidence','Knowledge','Honesty','Empathy','Authenticity','Awareness'],constrainedBy:['Knowledge','Confidence','Authenticity','Honesty']},
-      {id:'confidence',name:'Confidence',dependentOn:['Knowledge','Awareness','Humility'],supports:['Authenticity','Honesty','Humility','Consideration'],constrains:['Humility','Awareness'],constrainedBy:['Knowledge','Humility','Authenticity','Awareness','Empathy','Honesty']},
-      {id:'knowledge',name:'Knowledge',dependentOn:['Awareness','Humility','Honesty'],supports:['Confidence','Humility','Authenticity','Awareness','Alignment','Consideration','Constraint','Honesty','Empathy','Kindness','Respect'],constrains:['Confidence','Honesty','Authenticity','Consideration','Empathy','Humility','Awareness','Kindness','Constraint','Alignment','Respect'],constrainedBy:['Humility','Awareness','Honesty']},
-      {id:'awareness',name:'Awareness',dependentOn:['Humility','Knowledge','Honesty','Empathy','Authenticity','Alignment'],supports:['Authenticity','Knowledge','Humility','Alignment','Consideration','Kindness','Constraint','Empathy','Confidence','Honesty','Respect'],constrains:['Confidence','Honesty','Kindness','Consideration','Knowledge','Constraint','Alignment','Respect'],constrainedBy:['Knowledge','Humility','Authenticity','Confidence','Constraint']},
-      {id:'honesty',name:'Honesty',dependentOn:['Awareness','Knowledge','Humility','Authenticity','Confidence','Consideration','Kindness','Alignment','Respect'],supports:['Knowledge','Awareness','Humility','Authenticity','Alignment','Consideration'],constrains:['Confidence','Humility','Authenticity','Knowledge'],constrainedBy:['Knowledge','Humility','Awareness','Consideration','Kindness','Constraint','Empathy','Alignment','Respect']},
-      {id:'kindness',name:'Kindness',dependentOn:['Consideration','Awareness','Knowledge','Constraint','Empathy','Authenticity','Alignment','Respect'],supports:['Consideration','Alignment','Honesty','Authenticity'],constrains:['Honesty','Authenticity'],constrainedBy:['Consideration','Awareness','Knowledge','Constraint','Alignment','Empathy','Respect']},
-      {id:'empathy',name:'Empathy',dependentOn:['Consideration','Awareness','Knowledge','Humility','Alignment','Constraint','Respect'],supports:['Consideration','Kindness','Awareness','Alignment','Constraint','Authenticity'],constrains:['Confidence','Honesty','Kindness','Alignment'],constrainedBy:['Knowledge','Humility','Consideration','Constraint','Alignment','Respect']},
-      {id:'constraint',name:'Constraint',dependentOn:['Awareness','Consideration','Empathy','Knowledge','Humility','Alignment','Respect'],supports:['Consideration','Kindness','Empathy','Alignment'],constrains:['Kindness','Honesty','Authenticity','Empathy','Consideration','Awareness','Alignment'],constrainedBy:['Consideration','Knowledge','Awareness','Alignment']},
-      {id:'alignment',name:'Alignment',dependentOn:['Awareness','Knowledge','Honesty','Humility','Empathy','Consideration','Authenticity','Kindness','Constraint','Respect'],supports:['Authenticity','Honesty','Awareness','Consideration','Kindness','Constraint','Empathy'],constrains:['Empathy','Kindness','Consideration','Honesty','Constraint','Respect'],constrainedBy:['Knowledge','Awareness','Consideration','Empathy','Constraint']},
-      {id:'respect',name:'Respect',dependentOn:['Consideration','Awareness','Humility','Knowledge'],supports:['Empathy','Consideration','Kindness','Honesty','Constraint','Alignment'],constrains:['Honesty','Kindness','Empathy','Authenticity'],constrainedBy:['Knowledge','Awareness','Consideration','Alignment']}
+      {id:'authenticity',name:'Authenticity',SupportedBy:['Humility','Knowledge','Confidence','Awareness','Honesty','Alignment','Empathy','Consideration','Kindness'],Supports:['Honesty','Alignment','Awareness','Consideration','Kindness'],Constrains:['Confidence','Awareness'],ConstrainedBy:['Knowledge','Consideration','Kindness','Constraint','Honesty','Respect','Humility']},
+      {id:'consideration',name:'Consideration',SupportedBy:['Awareness','Knowledge','Humility','Constraint','Empathy','Authenticity','Confidence','Honesty','Kindness','Alignment','Respect'],Supports:['Kindness','Alignment','Authenticity','Honesty','Empathy','Constraint','Respect'],Constrains:['Kindness','Honesty','Authenticity','Empathy','Constraint','Alignment','Respect'],ConstrainedBy:['Knowledge','Awareness','Constraint','Alignment']},
+      {id:'humility',name:'Humility',SupportedBy:['Awareness','Knowledge','Honesty','Confidence'],Supports:['Authenticity','Knowledge','Awareness','Honesty','Alignment','Consideration','Empathy','Confidence','Constraint','Respect'],Constrains:['Confidence','Knowledge','Honesty','Empathy','Authenticity','Awareness'],ConstrainedBy:[]},
+      {id:'confidence',name:'Confidence',SupportedBy:['Knowledge','Awareness','Humility'],Supports:['Authenticity','Honesty','Humility','Consideration'],Constrains:['Awareness'],ConstrainedBy:['Knowledge','Humility','Authenticity','Awareness','Empathy','Honesty']},
+      {id:'knowledge',name:'Knowledge',SupportedBy:['Awareness','Humility','Honesty'],Supports:['Confidence','Humility','Authenticity','Awareness','Alignment','Consideration','Constraint','Honesty','Empathy','Kindness','Respect'],Constrains:['Confidence','Honesty','Authenticity','Consideration','Empathy','Awareness','Kindness','Constraint','Alignment','Respect'],ConstrainedBy:['Awareness','Honesty','Humility']},
+      {id:'awareness',name:'Awareness',SupportedBy:['Humility','Knowledge','Honesty','Empathy','Authenticity','Alignment'],Supports:['Authenticity','Knowledge','Humility','Alignment','Consideration','Kindness','Constraint','Empathy','Confidence','Honesty','Respect'],Constrains:['Confidence','Honesty','Kindness','Consideration','Knowledge','Constraint','Alignment','Respect'],ConstrainedBy:['Knowledge','Humility','Authenticity','Confidence','Constraint']},
+      {id:'honesty',name:'Honesty',SupportedBy:['Awareness','Knowledge','Humility','Authenticity','Confidence','Consideration','Kindness','Alignment','Respect'],Supports:['Knowledge','Awareness','Humility','Authenticity','Alignment','Consideration'],Constrains:['Confidence','Authenticity','Knowledge'],ConstrainedBy:['Knowledge','Awareness','Consideration','Kindness','Constraint','Empathy','Alignment','Respect','Humility']},
+      {id:'kindness',name:'Kindness',SupportedBy:['Consideration','Awareness','Knowledge','Constraint','Empathy','Authenticity','Alignment','Respect'],Supports:['Consideration','Alignment','Honesty','Authenticity'],Constrains:['Honesty','Authenticity'],ConstrainedBy:['Consideration','Awareness','Knowledge','Constraint','Alignment','Empathy','Respect']},
+      {id:'empathy',name:'Empathy',SupportedBy:['Consideration','Awareness','Knowledge','Humility','Alignment','Constraint','Respect'],Supports:['Consideration','Kindness','Awareness','Alignment','Constraint','Authenticity'],Constrains:['Confidence','Honesty','Kindness','Alignment'],ConstrainedBy:['Knowledge','Humility','Consideration','Constraint','Alignment','Respect']},
+      {id:'constraint',name:'Constraint',SupportedBy:['Awareness','Consideration','Empathy','Knowledge','Humility','Alignment','Respect'],Supports:['Consideration','Kindness','Empathy','Alignment'],Constrains:['Kindness','Honesty','Authenticity','Empathy','Consideration','Awareness','Alignment'],ConstrainedBy:['Consideration','Knowledge','Awareness','Alignment']},
+      {id:'alignment',name:'Alignment',SupportedBy:['Awareness','Knowledge','Honesty','Humility','Empathy','Consideration','Authenticity','Kindness','Constraint','Respect'],Supports:['Authenticity','Honesty','Awareness','Consideration','Kindness','Constraint','Empathy'],Constrains:['Empathy','Kindness','Consideration','Honesty','Constraint','Respect'],ConstrainedBy:['Knowledge','Awareness','Consideration','Empathy','Constraint']},
+      {id:'respect',name:'Respect',SupportedBy:['Consideration','Awareness','Humility','Knowledge'],Supports:['Empathy','Consideration','Kindness','Honesty','Constraint','Alignment'],Constrains:['Honesty','Kindness','Empathy','Authenticity'],ConstrainedBy:['Knowledge','Awareness','Consideration','Alignment']}
     ];
     const dispositionInfo={
       authenticity:{category:'bridge',function:'Alignment between who a person is at their current stage of existence, what they know, what they say, and what they do. It is not a fixed destination, but a pattern of matching inner reality and outward behavior.'},
       empathy:{category:'bridge',function:'The deliberate practice of approximating another conscious being’s perspective by placing oneself, as far as available knowledge permits, within the conditions of that being’s life.'},
-      alignment:{category:'bridge',function:'Acting in accordance with the agent’s reality, including what the agent knows to be true.'},
+      alignment:{category:'bridge',function:'Active attention to whether awareness, knowledge, honesty, humility, empathy, consideration, authenticity, kindness, constraint, and respect are being applied in accordance with one’s perspective of what is the case.'},
       honesty:{category:'bridge',function:'The willingness to accurately communicate one’s perspective of what is the case despite discomfort.'},
       respect:{category:'moral',function:'Active acknowledgment of another agent’s consciousness as one that bears pain, appreciates gratitude, suffers loss, and seeks physical and emotional comfort similar to one’s own.'},
       consideration:{category:'moral',function:'The practical recognition that other conscious beings have an inner experience, and that their experience has the same weight as one’s own. (Perspectival)'},
       kindness:{category:'moral',function:'Acting toward another conscious being as though their continued existence and well-being were as urgent as one’s own. (Action based)'},
       constraint:{category:'moral',function:'Recognizing before acting that an action toward another conscious being may be unwelcome, unhelpful, or unwanted.'},
-      awareness:{category:'epistemic',function:'Accurate perception of what is the case concerning the self, others, and the effects of one’s actions.'},
+      awareness:{category:'epistemic',function:'The agent’s perception of what is the case concerning the self, others, and the effects of one’s actions.'},
       confidence:{category:'epistemic',function:'Comfort with one’s status and knowledge so that it is non-comparative and does not change relative to another agent’s status or knowledge.'},
       knowledge:{category:'epistemic',function:'Understanding earned through acquiring information, building skills, solving problems, and learning from experience.'},
       humility:{category:'epistemic',function:'Genuine comfort with not knowing and with being wrong.'}
     };
     const categoryNames={bridge:'Linking Epistemic to Moral',moral:'Moral',epistemic:'Epistemic'};
     const veIndex=document.getElementById('veIndex'),veTitle=document.getElementById('veTitle'),veCategory=document.getElementById('veCategory'),veMap=document.getElementById('veMap'),veFunctions=document.getElementById('veFunctions');
-    const veGroups=[{key:'dependentOn',title:'Dependent On',style:'ve-dependent'},{key:'supports',title:'Supports',style:'ve-supports'},{key:'constrains',title:'Constrains',style:'ve-constrains'},{key:'constrainedBy',title:'Constrained By',style:'ve-constrained'}];
+    const veGroups=[{key:'SupportedBy',title:'Supported By',style:'ve-dependent'},{key:'Supports',title:'Supports',style:'ve-Supports'},{key:'Constrains',title:'Constrains',style:'ve-Constrains'},{key:'ConstrainedBy',title:'Constrained By',style:'ve-constrained'}];
     function selectDisposition(id,updateAddress=false){
       const selected=dispositions.find(item=>item.id===id)||dispositions.find(item=>item.id==='empathy');
       const selectedCategory=dispositionInfo[selected.id].category;
